@@ -11,7 +11,6 @@ struct User: Codable {
     var totalTasksCompleted: Int = 12
     var pomodoroCycles: Int = 5
 }
-
 // Clase para manejar la sesión del usuario
 class UserSession: ObservableObject {  // ← ObservableObject ya funciona con import Combine
     @Published var currentUser: User?
@@ -24,7 +23,6 @@ class UserSession: ObservableObject {  // ← ObservableObject ya funciona con i
     init() {
         loadSavedUser()
     }
-    
     // Registrar nuevo usuario
     func register(fullName: String, email: String, password: String) -> Bool {
         // Verificar si ya existe un usuario con ese email
