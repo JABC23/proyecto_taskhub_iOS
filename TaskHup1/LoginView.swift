@@ -43,10 +43,10 @@ struct LoginView: View {
                 }
                 .padding(.horizontal, 30)
                 
-                // Botón Iniciar Sesión
+                // 1. ACCIÓN PRINCIPAL: Validar credenciales e iniciar sesión
                 Button(action: {
                     if userSession.login(email: email, password: password) {
-                        // Login exitoso
+                        // Login exitoso → navega a la pantalla principal
                     } else {
                         errorMessage = "Correo o contraseña incorrectos"
                         showError = true
@@ -61,12 +61,14 @@ struct LoginView: View {
                 }
                 .padding(.horizontal, 30)
                 
-                // Link a registro
+                // 2. ACCIÓN DE NAVEGACIÓN: Ir al registro de nuevo usuario
                 NavigationLink(destination: RegisterView()) {
                     Text("¿No tienes cuenta? Regístrate")
                         .foregroundColor(.blue)
                 }
                 .padding(.bottom, 50)
+                
+                // 3. ACCIÓN DE RESPUESTA VISUAL: Mostrar alerta en caso de error
             }
             .navigationBarHidden(true)
             .alert("Error", isPresented: $showError) {
