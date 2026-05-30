@@ -1,17 +1,13 @@
-//
-//  TaskHup1App.swift
-//  TaskHup1
-//
-//  Created by Jose Daniel Espinoza Gomez on 29/05/26.
-//
 
+// TaskFlowApp.swift
 import SwiftUI
 
 @main
-struct TaskHup1App: App {
+struct TaskHup: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(UserSession.shared)
         }
     }
 }

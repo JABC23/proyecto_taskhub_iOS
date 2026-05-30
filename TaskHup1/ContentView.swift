@@ -1,24 +1,19 @@
-//
-//  ContentView.swift
-//  TaskHup1
-//
-//  Created by Jose Daniel Espinoza Gomez on 29/05/26.
-//
-
+// ContentView.swift
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var userSession = UserSession.shared
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            if userSession.isLoggedIn {
+                MainTabView()
+            } else {
+                LoginView()
+            }
         }
-        .padding()
     }
 }
-
 #Preview {
     ContentView()
 }
