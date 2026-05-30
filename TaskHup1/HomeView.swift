@@ -11,7 +11,6 @@ struct HomeView: View {
         formatter.dateFormat = "EEEE, d MMMM"
         return formatter.string(from: date).capitalized
     }
-    
     var userName: String {
         if let fullName = userSession.currentUser?.fullName {
             // Extraer solo el primer nombre (opcional)
@@ -20,7 +19,6 @@ struct HomeView: View {
         }
         return "admin"
     }
-    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -126,7 +124,6 @@ struct HomeView: View {
             }
         }
     }
-    
     // Función para obtener emoji según la hora del día
     private func getEmojiForTimeOfDay() -> String {
         let hour = Calendar.current.component(.hour, from: Date())
